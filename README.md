@@ -1,11 +1,24 @@
-// Joan
-Group Name:
+<u>Humbled By CSS Members: </u>
 
-Dependicies:
+- Chedeline Viljean
+- Omari Archer
+- Ashley Richard
+- Joan Renfroe
 
-// Ashley
-Models:
+<u>List of Dependencies: </u>
 
-Backend Route:
+- Express
+- Nodemon
+- CORS
+- Mongoose
+- MongoDB
+- Morgan
+- .env
 
-// TEsting
+# Models
+
+![](https://imgur.com/7zTf6x9.png)
+
+# Routes
+
+![](https://imgur.com/ZzwJvHA.png)

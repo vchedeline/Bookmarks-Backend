@@ -6,6 +6,7 @@ const {PORT = 3001, DATABASE_URL } = process.env
 const mongoose = require("mongoose");
 const morgan = require ("morgan");
 const cors = require ("cors");
+const { Schema, model } = require("mongoose");
 
 
 //// Middleware
@@ -22,6 +23,16 @@ mongoose.connection
 .on("open",()=> console.log("You're connected"))
 .on("close",()=> console.log("You're disconnected"))
 .on("error",(error)=> console.log(error))
+
+// Schema
+const bookmarkSchema = new Schema (
+  {
+    title: String,
+    url: String,
+  },
+);
+
+const Bookmark = model("Bookmark", bookmarkSchema);
 
 app.get("/", (req, res) => {
   res.send("Hello World");

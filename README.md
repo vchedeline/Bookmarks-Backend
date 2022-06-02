@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <u>Humbled By CSS Members: </u>
 * Chedeline Viljean
 * Omari Archer
@@ -12,3 +13,12 @@
 * MongoDB
 * Morgan
 * .env
+=======
+# Models
+
+![](https://imgur.com/7zTf6x9.png)
+
+# Routes
+
+![](https://imgur.com/ZzwJvHA.png)
+>>>>>>> a-readme

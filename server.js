@@ -38,20 +38,39 @@ app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
-app.get("/bookmarks", (req, res) => {
-  res.send("Index Page");
+app.get("/bookmarks", async (req, res) => {
+  try {
+    res.json(await Bookmark.find({}));
+  } catch (error) {
+    res.status(400).json(error);
+  }
 });
 
-app.post("/bookmarks", (req, res) => {
-  res.send("Create Page");
+
+app.post("/bookmarks", async (req, res) => {
+  try {
+    res.json(await Bookmark.create(req.body));
+  } catch (error) {
+    res.status(400).json(error);
+  }
 });
 
-app.put("/bookmarks/:id", (req, res) => {
-  res.send("Update Page");
+app.put("/bookmarks/:id", async (req, res) => {
+  try {
+    res.json(
+      await Bookmark.findByIdAndUpdate(req.params.id, req.body, { new: true })
+    );
+  } catch (error) {
+    res.status(400).json(error);
+  }
 });
 
-app.delete("/bookmarks/:id", (req, res) => {
-  res.send("Delete Page");
+app.delete("/bookmarks/:id", async (req, res) => {
+  try {
+    res.json(await Bookmark.findByIdAndDelete(req.params.id));
+  } catch (error) {
+    res.status(400).json(error);
+  }
 });
 
 app.listen(PORT, () => console.log(`Listening on Port ${PORT}...`));
